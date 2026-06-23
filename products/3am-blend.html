@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 AM Blend Dark Roast | Two Ravens Coffee Co.</title>
+  <meta name="description" content="3 AM Blend Dark Roast: deep and velvety, with bakers chocolate, caramelized sugar, and toffee. Made for the third shift and the questions that only show up after midnight. From The Liminal Record." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="mark">✦</span>
+        <span><span class="name">Two Ravens</span><span class="tag">Thought · Memory</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="nav">
+        <li><a href="../index.html#roasts">Roasts</a></li>
+        <li><a href="../index.html#story">Our Story</a></li>
+        <li><a href="../index.html#mission">The Mission</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <p class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#roasts">Roasts</a> · <span>3 AM Blend</span></p>
+
+      <div class="pdetail">
+        <!-- GALLERY: art not finalized, placeholder primary, 3D preview available -->
+        <div class="gallery">
+          <div class="main" id="main-view">
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:2rem;background:radial-gradient(600px 300px at 50% 20%, rgba(31,93,102,.45), transparent 70%);">
+              <span style="font-size:2rem;color:var(--gold);filter:drop-shadow(0 0 12px rgba(224,177,94,.6));">✦</span>
+              <p style="font-family:var(--serif);font-size:2rem;color:var(--cream);margin:.6rem 0 .1rem;letter-spacing:1px;">3 AM Blend</p>
+              <p class="eyebrow" style="margin:0;">Dark Roast</p>
+              <p style="color:var(--muted);font-size:.9rem;margin-top:1.4rem;max-width:26ch;">Label artwork is being finalized. The 3D preview and bag photos land here as soon as it's locked.</p>
+            </div>
+          </div>
+          <div class="thumbs" id="thumbs">
+            <button class="active" data-type="ph" title="Artwork in progress" aria-label="Artwork in progress">
+              <span style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;">✦</span>
+            </button>
+            <button data-type="3d" title="3D preview (work in progress)" aria-label="3D preview">
+              <span style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;color:var(--muted);font-size:.62rem;font-weight:600;letter-spacing:.04em;text-align:center;">3D&nbsp;WIP</span>
+            </button>
+          </div>
+          <p style="font-size:.8rem;color:var(--muted);margin-top:.6rem;">The “3D WIP” thumbnail shows the bag shape with the label still blank.</p>
+        </div>
+
+        <!-- INFO -->
+        <div class="pinfo">
+          <p class="eyebrow">Dark Roast · From The Liminal Record</p>
+          <h1 style="font-size:clamp(2rem,5vw,3rem);">3 AM Blend</h1>
+          <p class="lead" style="font-size:1.1rem;">A deep, dark roast that's smooth and velvety, where sweetness and depth balance out. Made for the third shift, the late read, and the questions that only show up after midnight.</p>
+
+          <ul class="notes">
+            <li>Bakers Chocolate</li>
+            <li>Caramelized Sugar</li>
+            <li>Toffee</li>
+          </ul>
+
+          <div class="price-row">
+            <span class="price">$21.99</span>
+            <span class="price unit">/ 12 oz bag</span>
+          </div>
+
+          <label class="eyebrow" style="display:block;margin-bottom:.5rem;">Grind</label>
+          <div class="opt-row" id="grind">
+            <button class="opt active" data-sku="COF-WHB-12O">Whole Bean</button>
+            <button class="opt" data-sku="COF-GND-12O">Ground</button>
+          </div>
+
+          <button class="btn btn-gold btn-block" id="buy" data-product="3am-blend" disabled style="opacity:.65;cursor:not-allowed;">Checkout opens soon</button>
+          <p class="note-box" style="margin-top:1rem;">Secure checkout is being connected. Want a heads-up the moment 3 AM Blend goes live? <a href="../contact.html">Leave your email →</a></p>
+
+          <table class="spec">
+            <tr><th>Roast level</th><td>Dark</td></tr>
+            <tr><th>Character</th><td>Full-bodied, smooth, velvety</td></tr>
+            <tr><th>Tasting notes</th><td>Bakers chocolate, caramelized sugar, toffee, cocoa finish</td></tr>
+            <tr><th>Made for</th><td>The third shift, the late read, the questions after midnight</td></tr>
+            <tr><th>Size</th><td>12 oz</td></tr>
+            <tr><th>Grind options</th><td>Whole bean or ground</td></tr>
+            <tr><th>Freshness</th><td>Roasted to order, shipped within days</td></tr>
+          </table>
+
+          <p class="note-box">
+            3 AM Blend is the house roast of <a href="https://theliminalrecord.substack.com" target="_blank" rel="noopener">The Liminal Record</a>, a coffee for the hours when the strange stuff happens. Brewed for curiosity. This one sits outside the Angel Wings Transport give-back.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <p><span class="mark">✦ Two Ravens Coffee Co.</span></p>
+          <p class="foot-note">Small-batch coffee roasted to order, supporting Angel Wings Transport, a 501(c)(3) flying rescued animals, service members, and medical patients across the Northwest.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="tailwind.html">Tailwind</a></li>
+            <li><a href="final-approach.html">Final Approach</a></li>
+            <li><a href="3am-blend.html">3 AM Blend</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul>
+            <li><a href="../index.html#story">Our Story</a></li>
+            <li><a href="../index.html#mission">The Mission</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="https://awtrescue.org" target="_blank" rel="noopener">Angel Wings Transport</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-legal">
+        <span>© 2026 Two Ravens Coffee Co. All rights reserved.</span>
+        <span>A portion of every bag supports the mission.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Final 3D art not uploaded yet. When ready, set ART_URL to the new artworkUrl and the 3D preview goes live.
+    var ART_URL = "https://storage.roastify.app/design-upload/d97426ba-3d31-4f14-9ee4-af5f1b1cc4d0.jpeg"; // currently the blank template
+    var VIEWER = '<iframe title="3 AM Blend 3D bag preview" src="https://viewer.roastify.app?productType=CoffeeBox12oz&artworkUrl=' + ART_URL + '" style="width:100%;height:100%;border:none;" loading="lazy"></iframe>';
+    var PLACEHOLDER = document.getElementById('main-view').innerHTML;
+    var main = document.getElementById('main-view');
+    document.getElementById('thumbs').addEventListener('click', function (e) {
+      var btn = e.target.closest('button'); if (!btn) return;
+      this.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      main.innerHTML = (btn.dataset.type === '3d') ? VIEWER : PLACEHOLDER;
+    });
+    // ---- Grind selector ----
+    document.getElementById('grind').addEventListener('click', function (e) {
+      var btn = e.target.closest('button'); if (!btn) return;
+      this.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('buy').dataset.sku = btn.dataset.sku;
+      refreshBuy();
+    });
+
+    /* ============================================================
+       STRIPE CHECKOUT: paste this roast's Stripe Payment Link URL.
+       One link per roast. The grind the customer picked on this page
+       is passed to Stripe automatically (as client_reference_id), so
+       it shows on the order. Leave blank to keep the button disabled.
+       ============================================================ */
+    var STRIPE_LINK = "";   // <- paste the 3 AM Blend Payment Link URL (hold until art is ready)
+    var BUY_LABEL = "Buy now";
+    var BUY_PENDING = "Checkout opens soon";
+
+    var buyBtn = document.getElementById('buy');
+    function currentGrind() {
+      var a = document.querySelector('#grind .opt.active');
+      return (a && /ground/i.test(a.textContent)) ? 'ground' : 'whole_bean';
+    }
+    function checkoutUrl() {
+      if (!STRIPE_LINK) return "";
+      var sep = STRIPE_LINK.indexOf('?') > -1 ? '&' : '?';
+      return STRIPE_LINK + sep + 'client_reference_id=' + currentGrind();
+    }
+    function refreshBuy() {
+      buyBtn.disabled = !STRIPE_LINK;
+      buyBtn.style.opacity = STRIPE_LINK ? "" : ".65";
+      buyBtn.style.cursor = STRIPE_LINK ? "" : "not-allowed";
+      buyBtn.textContent = STRIPE_LINK ? BUY_LABEL : BUY_PENDING;
+    }
+    buyBtn.addEventListener('click', function () {
+      var url = checkoutUrl();
+      if (url) window.location.href = url;
+    });
+    refreshBuy();
+  </script>
+</body>
+</html>

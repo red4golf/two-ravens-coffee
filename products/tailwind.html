@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Medium Roast | Two Ravens Coffee Co.</title>
+  <meta name="description" content="Tailwind Medium Roast: smooth and easy-drinking, with chocolate-covered almond, maple syrup, and citrus. Roasted to order. A portion of every bag supports Angel Wings Transport, a 501(c)(3)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="mark">✦</span>
+        <span>
+          <span class="name">Two Ravens</span>
+          <span class="tag">Thought · Memory</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="nav">
+        <li><a href="../index.html#roasts">Roasts</a></li>
+        <li><a href="../index.html#story">Our Story</a></li>
+        <li><a href="../index.html#mission">The Mission</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PRODUCT DETAIL -->
+  <section>
+    <div class="wrap">
+      <p class="breadcrumb"><a href="../index.html">Home</a> · <a href="../index.html#roasts">Roasts</a> · <span>Tailwind</span></p>
+
+      <div class="pdetail">
+
+        <!-- GALLERY: 3D viewer primary -->
+        <div class="gallery">
+          <div class="main" id="main-view">
+            <iframe
+              title="Tailwind 3D bag preview"
+              src="https://viewer.roastify.app?productType=CoffeeBox12oz&amp;artworkUrl=https://storage.roastify.app/design-upload/4ef7a86f-3edc-4fdb-8954-e5bdb30488fa.jpeg"
+              style="width:100%;height:100%;border:none;"
+              loading="lazy"></iframe>
+          </div>
+          <div class="thumbs" id="thumbs">
+            <button class="active" data-type="3d" title="3D preview" aria-label="3D preview">
+              <span style="display:flex;width:100%;height:100%;align-items:center;justify-content:center;color:var(--gold);font-size:.7rem;font-weight:600;letter-spacing:.05em;">3D</span>
+            </button>
+            <button data-type="img" data-src="https://cdn.roastify.app/mockup-images/8ddc4028-a771-4393-bf64-322d6b8b772f.png" aria-label="Bag mockup front">
+              <img src="https://cdn.roastify.app/mockup-images/8ddc4028-a771-4393-bf64-322d6b8b772f.png" alt="Tailwind bag mockup, front" loading="lazy" />
+            </button>
+            <button data-type="img" data-src="https://cdn.roastify.app/mockup-images/0f5dab3e-a2e5-4452-9951-b1c8545f38ec.png" aria-label="Bag mockup alternate">
+              <img src="https://cdn.roastify.app/mockup-images/0f5dab3e-a2e5-4452-9951-b1c8545f38ec.png" alt="Tailwind bag mockup, alternate" loading="lazy" />
+            </button>
+          </div>
+          <p style="font-size:.8rem;color:var(--muted);margin-top:.6rem;">Drag the 3D preview to spin the bag. Tap a thumbnail to switch views.</p>
+        </div>
+
+        <!-- INFO -->
+        <div class="pinfo">
+          <p class="eyebrow">Medium Roast · Broken Top</p>
+          <h1 style="font-size:clamp(2rem,5vw,3rem);">Tailwind</h1>
+          <p class="lead" style="font-size:1.1rem;">A tailwind for the ones flying home. Smooth and easy-drinking, the everyday medium roast you reach for without thinking twice. Roasted to order and shipped fresh.</p>
+
+          <ul class="notes">
+            <li>Chocolate-Covered Almonds</li>
+            <li>Maple Syrup</li>
+            <li>Citrus</li>
+          </ul>
+
+          <div class="price-row">
+            <span class="price">$19.99</span>
+            <span class="price unit">/ 12 oz bag</span>
+          </div>
+
+          <!-- Grind selector -->
+          <label class="eyebrow" style="display:block;margin-bottom:.5rem;">Grind</label>
+          <div class="opt-row" id="grind">
+            <button class="opt active" data-sku="COF-WHB-12O-BKT-BOX">Whole Bean</button>
+            <button class="opt" data-sku="COF-GND-12O-BKT-BOX">Ground</button>
+          </div>
+
+          <!-- Buy (Stripe placeholder) -->
+          <button class="btn btn-gold btn-block" id="buy" data-product="tailwind" disabled style="opacity:.65;cursor:not-allowed;">Checkout opens soon</button>
+          <p class="note-box" style="margin-top:1rem;">Secure checkout is being connected. Want a heads-up the moment Tailwind goes live? <a href="../contact.html">Leave your email →</a></p>
+
+          <!-- Specs -->
+          <table class="spec">
+            <tr><th>Roast level</th><td>Medium</td></tr>
+            <tr><th>Blend</th><td>Broken Top</td></tr>
+            <tr><th>Tasting notes</th><td>Chocolate-covered almonds, maple syrup, citrus</td></tr>
+            <tr><th>Size</th><td>12 oz</td></tr>
+            <tr><th>Grind options</th><td>Whole bean or ground</td></tr>
+            <tr><th>Freshness</th><td>Roasted to order, shipped within days</td></tr>
+          </table>
+
+          <p class="fineprint">
+            A portion of every bag supports Angel Wings Transport, a 501(c)(3) nonprofit that flies rescued animals, service members, and medical patients across the Northwest. Coffee purchases support the organization's mission and operational costs and are not compensation for air transportation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <p><span class="mark">✦ Two Ravens Coffee Co.</span></p>
+          <p class="foot-note">Small-batch coffee roasted to order, supporting Angel Wings Transport, a 501(c)(3) flying rescued animals, service members, and medical patients across the Northwest.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="tailwind.html">Tailwind</a></li>
+            <li><a href="final-approach.html">Final Approach</a></li>
+            <li><a href="3am-blend.html">3 AM Blend</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul>
+            <li><a href="../index.html#story">Our Story</a></li>
+            <li><a href="../index.html#mission">The Mission</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="https://awtrescue.org" target="_blank" rel="noopener">Angel Wings Transport</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-legal">
+        <span>© 2026 Two Ravens Coffee Co. All rights reserved.</span>
+        <span>A portion of every bag supports the mission.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 3D viewer iframe markup, restored when the 3D thumb is chosen
+    var VIEWER = '<iframe title="Tailwind 3D bag preview" src="https://viewer.roastify.app?productType=CoffeeBox12oz&artworkUrl=https://storage.roastify.app/design-upload/4ef7a86f-3edc-4fdb-8954-e5bdb30488fa.jpeg" style="width:100%;height:100%;border:none;" loading="lazy"></iframe>';
+    var main = document.getElementById('main-view');
+    document.getElementById('thumbs').addEventListener('click', function (e) {
+      var btn = e.target.closest('button'); if (!btn) return;
+      this.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      if (btn.dataset.type === '3d') {
+        main.innerHTML = VIEWER;
+      } else {
+        main.innerHTML = '<img src="' + btn.dataset.src + '" alt="Tailwind bag mockup" style="width:100%;height:100%;object-fit:cover;" />';
+      }
+    });
+
+    // ---- Grind selector ----
+    document.getElementById('grind').addEventListener('click', function (e) {
+      var btn = e.target.closest('button'); if (!btn) return;
+      this.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('buy').dataset.sku = btn.dataset.sku;
+      refreshBuy();
+    });
+
+    /* ============================================================
+       STRIPE CHECKOUT: paste this roast's Stripe Payment Link URL.
+       One link per roast. The grind the customer picked on this page
+       is passed to Stripe automatically (as client_reference_id), so
+       it shows on the order. Leave blank to keep the button disabled.
+       ============================================================ */
+    var STRIPE_LINK = "https://buy.stripe.com/5kQbJ058ccQbchme9ogUM00";   // <- Tailwind Payment Link
+    var BUY_LABEL = "Buy now";
+    var BUY_PENDING = "Checkout opens soon";
+
+    var buyBtn = document.getElementById('buy');
+    function currentGrind() {
+      var a = document.querySelector('#grind .opt.active');
+      return (a && /ground/i.test(a.textContent)) ? 'ground' : 'whole_bean';
+    }
+    function checkoutUrl() {
+      if (!STRIPE_LINK) return "";
+      var sep = STRIPE_LINK.indexOf('?') > -1 ? '&' : '?';
+      return STRIPE_LINK + sep + 'client_reference_id=' + currentGrind();
+    }
+    function refreshBuy() {
+      buyBtn.disabled = !STRIPE_LINK;
+      buyBtn.style.opacity = STRIPE_LINK ? "" : ".65";
+      buyBtn.style.cursor = STRIPE_LINK ? "" : "not-allowed";
+      buyBtn.textContent = STRIPE_LINK ? BUY_LABEL : BUY_PENDING;
+    }
+    buyBtn.addEventListener('click', function () {
+      var url = checkoutUrl();
+      if (url) window.location.href = url;
+    });
+    refreshBuy();
+  </script>
+
+</body>
+</html>

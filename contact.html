@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Notify | Two Ravens Coffee Co.</title>
+  <meta name="description" content="Get in touch with Two Ravens Coffee Co., or leave your email to hear the moment a roast goes live." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <span class="mark">✦</span>
+        <span>
+          <span class="name">Two Ravens</span>
+          <span class="tag">Thought · Memory</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="nav">
+        <li><a href="index.html#roasts">Roasts</a></li>
+        <li><a href="index.html#story">Our Story</a></li>
+        <li><a href="index.html#mission">The Mission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Say hello, or get on the list.</h2>
+        <p class="lead" style="margin-inline:auto;">Questions, wholesale, or just want to know the second a roast goes live? Drop a note below and it comes straight to us.</p>
+      </div>
+
+      <form class="form-card" id="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="topic">What's this about?</label>
+          <select id="topic" name="topic">
+            <option value="Notify me">Notify me when roasts go live</option>
+            <option value="General question">General question</option>
+            <option value="Wholesale / bulk">Wholesale / bulk</option>
+            <option value="The mission / AWT">The mission / Angel Wings Transport</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message <span style="color:var(--muted);">(optional)</span></label>
+          <textarea id="message" name="message" placeholder="Anything you'd like us to know..."></textarea>
+        </div>
+        <!-- simple honeypot for bots -->
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block" id="submit-btn">Send it</button>
+        <p class="form-status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <p><span class="mark">✦ Two Ravens Coffee Co.</span></p>
+          <p class="foot-note">Small-batch coffee roasted to order, supporting Angel Wings Transport, a 501(c)(3) flying rescued animals, service members, and medical patients across the Northwest.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products/tailwind.html">Tailwind</a></li>
+            <li><a href="products/final-approach.html">Final Approach</a></li>
+            <li><a href="products/3am-blend.html">3 AM Blend</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul>
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="index.html#mission">The Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://awtrescue.org" target="_blank" rel="noopener">Angel Wings Transport</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-legal">
+        <span>© 2026 Two Ravens Coffee Co. All rights reserved.</span>
+        <span>A portion of every bag supports the mission.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================================
+       CONFIG: paste the Make.com "Custom webhook" URL here.
+       Until it's set, the form validates and shows a friendly
+       message but does not send anywhere.
+       ============================================================ */
+    var MAKE_WEBHOOK_URL = "https://hook.us1.make.com/y11s72uwlefrtvobmuytp2gxxdaddbuw"; // e.g. "https://hook.us2.make.com/xxxxxxxxxxxxxxxx"
+
+    // Shared secret the Make scenario checks. A direct bot POST that doesn't
+    // load this page won't include it, so Make drops the submission.
+    var FORM_TOKEN = "trc_2026_a9F3kQ7z";
+    // When the page loaded, used to measure how fast the form was filled.
+    var FORM_RENDERED_AT = Date.now();
+
+    var form = document.getElementById('contact-form');
+    var statusEl = document.getElementById('status');
+    var btn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      statusEl.className = 'form-status';
+      statusEl.textContent = '';
+
+      // honeypot
+      if (form.company.value) { return; }
+
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      if (!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        statusEl.className = 'form-status err';
+        statusEl.textContent = 'Please add your name and a valid email.';
+        return;
+      }
+
+      var payload = {
+        name: name,
+        email: email,
+        topic: form.topic.value,
+        message: form.message.value.trim(),
+        company: form.company.value,                 // honeypot (must be empty)
+        form_token: FORM_TOKEN,                       // shared secret
+        elapsed_ms: Date.now() - FORM_RENDERED_AT,    // how long the form took to fill
+        source: 'tworavens-website',
+        page: location.href,
+        submitted_at: new Date().toISOString()
+      };
+
+      if (!MAKE_WEBHOOK_URL) {
+        statusEl.className = 'form-status ok';
+        statusEl.textContent = "Thanks, " + name + "! You're on the list, and we'll be in touch soon.";
+        form.reset();
+        return;
+      }
+
+      btn.disabled = true; btn.textContent = 'Sending…';
+      try {
+        var res = await fetch(MAKE_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error('Request failed');
+        statusEl.className = 'form-status ok';
+        statusEl.textContent = "Thanks, " + name + "! You're on the list, and we'll be in touch soon.";
+        form.reset();
+      } catch (err) {
+        statusEl.className = 'form-status err';
+        statusEl.textContent = 'Something went wrong sending that. Please try again in a moment.';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Send it';
+      }
+    });
+  </script>

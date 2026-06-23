@@ -3,1209 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Two Ravens Coffee Co. — THOUGHT . MEMORY</title>
-  <meta name="description" content="Coffee roasted for the mission: animal rescue flights, military homecomings, and the questions that keep you up past midnight." />
+  <title>Two Ravens Coffee Co. | Coffee Roasted for the Mission</title>
+  <meta name="description" content="Small-batch coffee roasted to order. A portion of every bag supports Angel Wings Transport, a 501(c)(3) flying rescued animals, service members, and medical patients where they need to be." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg:         #0a0a0a;
-      --bg-surface: #111111;
-      --bg-card:    #161616;
-      --gold:       #c8922a;
-      --gold-light: #e0a83a;
-      --gold-dim:   #8a6418;
-      --slate:      #4a5568;
-      --slate-light:#718096;
-      --text:       #d4c9b8;
-      --text-muted: #7a7060;
-      --border:     #232323;
-      --font-head:  'Cinzel', serif;
-      --font-body:  'Inter', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ============================================================
-       UTILITY
-    ============================================================ */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .section-label {
-      font-family: var(--font-head);
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .divider {
-      width: 3rem;
-      height: 1px;
-      background: var(--gold-dim);
-      margin: 2rem 0;
-    }
-
-    /* ============================================================
-       NAV
-    ============================================================ */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    .nav-logo span {
-      color: var(--text-muted);
-      font-weight: 400;
-      font-size: 0.65rem;
-      display: block;
-      letter-spacing: 0.35em;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--font-head);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    .nav-shop-btn {
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.55rem 1.25rem;
-      border: 1px solid var(--gold-dim);
-      color: var(--gold);
-      background: transparent;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .nav-shop-btn:hover {
-      background: var(--gold);
-      color: var(--bg);
-    }
-
-    /* Mobile hamburger */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
-    }
-
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 1px;
-      background: var(--text);
-      transition: transform 0.3s, opacity 0.3s;
-    }
-
-    /* ============================================================
-       HERO
-    ============================================================ */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 8rem 2rem 6rem;
-      background: var(--bg);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 40%, rgba(200, 146, 42, 0.05) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(200, 146, 42, 0.04) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero-raven-bg {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.04;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-headline {
-      font-family: var(--font-head);
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: #f0ece4;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
-    }
-
-    .hero-subheadline {
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 3rem;
-      line-height: 1.8;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      gap: 1.25rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      font-family: var(--font-head);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 1rem 2.25rem;
-      background: var(--gold);
-      color: var(--bg);
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      font-family: var(--font-head);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 1rem 2.25rem;
-      background: transparent;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--slate);
-      color: var(--text);
-    }
-
-    .hero-tagline {
-      margin-top: 4rem;
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      color: var(--text-muted);
-      opacity: 0.6;
-    }
-
-    /* ============================================================
-       PRODUCTS
-    ============================================================ */
-    #products {
-      padding: 7rem 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .products-header {
-      margin-bottom: 4rem;
-    }
-
-    .products-header h2 {
-      font-family: var(--font-head);
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 600;
-      color: #f0ece4;
-      letter-spacing: 0.05em;
-    }
-
-    .products-header p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 0.75rem;
-      max-width: 480px;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .product-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      position: relative;
-      transition: border-color 0.25s, transform 0.2s;
-    }
-
-    .product-card:hover {
-      border-color: var(--gold-dim);
-      transform: translateY(-3px);
-    }
-
-    .product-img-wrap {
-      aspect-ratio: 4/5;
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Raven SVG placeholder per product */
-    .product-img-wrap svg {
-      width: 55%;
-      height: 55%;
-      opacity: 0.18;
-    }
-
-    .product-roast-badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      font-family: var(--font-head);
-      font-size: 0.55rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.7rem;
-      border: 1px solid var(--gold-dim);
-      color: var(--gold);
-      background: rgba(10,10,10,0.8);
-    }
-
-    .product-body {
-      padding: 1.75rem;
-    }
-
-    .product-name {
-      font-family: var(--font-head);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #f0ece4;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.6rem;
-    }
-
-    .product-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .product-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--border);
-      padding-top: 1.25rem;
-      margin-top: auto;
-    }
-
-    .product-price {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    .product-price small {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
-      display: block;
-      font-weight: 400;
-    }
-
-    .btn-buy {
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.65rem 1.25rem;
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-buy:hover {
-      background: var(--gold);
-      color: var(--bg);
-    }
-
-    /* Product accent colors */
-    .card-tailwind .product-img-wrap {
-      background: linear-gradient(145deg, #111 0%, #14110a 100%);
-    }
-
-    .card-final .product-img-wrap {
-      background: linear-gradient(145deg, #111 0%, #0f130e 100%);
-    }
-
-    .card-3am .product-img-wrap {
-      background: linear-gradient(145deg, #0d0d0d 0%, #0a0a12 100%);
-    }
-
-    /* ============================================================
-       OUR STORY
-    ============================================================ */
-    #story {
-      padding: 8rem 0;
-      background: var(--bg);
-    }
-
-    .story-layout {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .story-sidebar {
-      position: sticky;
-      top: 7rem;
-    }
-
-    .story-sidebar h2 {
-      font-family: var(--font-head);
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 600;
-      color: #f0ece4;
-      letter-spacing: 0.05em;
-      line-height: 1.3;
-      margin-bottom: 2rem;
-    }
-
-    .story-raven {
-      opacity: 0.12;
-      margin-top: 2rem;
-    }
-
-    .story-body p {
-      font-size: 0.975rem;
-      color: var(--text);
-      line-height: 1.85;
-      margin-bottom: 1.75rem;
-    }
-
-    .story-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .story-body strong {
-      color: #f0ece4;
-      font-weight: 500;
-    }
-
-    /* ============================================================
-       MISSION
-    ============================================================ */
-    #mission {
-      padding: 7rem 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-    }
-
-    .mission-inner {
-      max-width: 720px;
-    }
-
-    .mission-inner h2 {
-      font-family: var(--font-head);
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 600;
-      color: #f0ece4;
-      letter-spacing: 0.05em;
-      margin-bottom: 2rem;
-    }
-
-    .mission-inner p {
-      font-size: 0.975rem;
-      color: var(--text-muted);
-      line-height: 1.85;
-      margin-bottom: 1.25rem;
-    }
-
-    .mission-inner p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .mission-link {
-      display: inline-block;
-      margin-top: 2.5rem;
-      font-family: var(--font-head);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border-bottom: 1px solid var(--gold-dim);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .mission-link:hover {
-      color: var(--gold-light);
-      border-color: var(--gold-light);
-    }
-
-    .mission-faa-note {
-      margin-top: 2rem;
-      padding: 1.25rem 1.5rem;
-      border-left: 2px solid var(--gold-dim);
-      background: rgba(200, 146, 42, 0.04);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 4rem 2rem 2.5rem;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .footer-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand .footer-logo {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    .footer-brand .footer-tagline {
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.35em;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-    }
-
-    .footer-brand p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      max-width: 280px;
-      margin-top: 1rem;
-      line-height: 1.7;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 4rem;
-    }
-
-    .footer-nav-col h4 {
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .footer-nav-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer-nav-col li a {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-
-    .footer-nav-col li a:hover {
-      color: var(--gold);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border);
-      padding-top: 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-copy {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .footer-mission-line {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    /* ============================================================
-       MODAL (Coming Soon)
-    ============================================================ */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-
-    .modal-overlay.open {
-      display: flex;
-    }
-
-    .modal-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 3rem 2.5rem;
-      max-width: 440px;
-      width: 100%;
-      text-align: center;
-      position: relative;
-    }
-
-    .modal-box svg {
-      opacity: 0.15;
-      margin: 0 auto 1.5rem;
-    }
-
-    .modal-box h3 {
-      font-family: var(--font-head);
-      font-size: 1.2rem;
-      color: #f0ece4;
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-
-    .modal-box p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .modal-close {
-      font-family: var(--font-head);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.75rem 1.75rem;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .modal-close:hover {
-      border-color: var(--gold-dim);
-      color: var(--gold);
-    }
-
-    /* ============================================================
-       SCROLL INDICATOR
-    ============================================================ */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text-muted);
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      font-family: var(--font-head);
-      text-transform: uppercase;
-      animation: fadeUpDown 2.5s ease-in-out infinite;
-    }
-
-    .scroll-indicator svg {
-      opacity: 0.5;
-    }
-
-    @keyframes fadeUpDown {
-      0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
-      50%       { opacity: 0.9; transform: translateX(-50%) translateY(6px); }
-    }
-
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-    @media (max-width: 900px) {
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .story-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .story-sidebar {
-        position: static;
-      }
-
-      .story-raven {
-        display: none;
-      }
-
-      .footer-nav {
-        gap: 2.5rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links, .nav-shop-btn {
-        display: none;
-      }
-
-      .nav-hamburger {
-        display: flex;
-      }
-
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-headline {
-        font-size: 2rem;
-      }
-
-      .footer-top {
-        flex-direction: column;
-      }
-
-      .footer-nav {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-  <!-- ============================================================
-       NAV
-  ============================================================ -->
-  <nav aria-label="Primary navigation">
-    <div class="nav-logo">
-      TWO RAVENS
-      <span>THOUGHT . MEMORY</span>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <span class="mark">✦</span>
+        <span>
+          <span class="name">Two Ravens</span>
+          <span class="tag">Thought · Memory</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <ul class="nav-links" id="nav">
+        <li><a href="index.html#roasts">Roasts</a></li>
+        <li><a href="index.html#collection">250th</a></li>
+        <li><a href="index.html#story">Our Story</a></li>
+        <li><a href="index.html#mission">The Mission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-    <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#mission">Mission</a></li>
-    </ul>
-    <button class="nav-shop-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop the Roasts</button>
-    <button class="nav-hamburger" aria-label="Open menu" onclick="toggleMobileNav(this)">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  </header>
 
-  <!-- Mobile nav overlay (minimal) -->
-  <div id="mobile-nav" style="display:none;position:fixed;inset:0;background:rgba(10,10,10,0.97);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;">
-    <a href="#products" onclick="closeMobileNav()" style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.2em;color:#d4c9b8;">Products</a>
-    <a href="#story"    onclick="closeMobileNav()" style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.2em;color:#d4c9b8;">Our Story</a>
-    <a href="#mission"  onclick="closeMobileNav()" style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:0.2em;color:#d4c9b8;">Mission</a>
-    <button onclick="closeMobileNav()" style="margin-top:1rem;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.75rem 2rem;border:1px solid #4a5568;background:transparent;color:#7a7060;cursor:pointer;">Close</button>
-  </div>
-
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section id="hero" aria-label="Hero">
-    <div class="hero-bg"></div>
-
-    <!-- Large background raven (decorative) -->
-    <div class="hero-raven-bg" aria-hidden="true">
-      <svg width="520" height="520" viewBox="0 0 200 200" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg">
-        <!-- Raven silhouette -->
-        <path d="M100 170 C80 155 50 140 30 115 C10 90 15 60 30 45 C45 30 65 28 80 35 C70 20 85 5 100 10 C115 5 130 20 120 35 C135 28 155 30 170 45 C185 60 190 90 170 115 C150 140 120 155 100 170Z" opacity="0.9"/>
-        <!-- Wing detail left -->
-        <path d="M55 90 C40 75 25 65 20 50 C30 55 42 68 55 80Z"/>
-        <!-- Wing detail right -->
-        <path d="M145 90 C160 75 175 65 180 50 C170 55 158 68 145 80Z"/>
-        <!-- Beak -->
-        <path d="M95 35 C88 30 82 25 90 22 C96 20 104 20 110 22 C118 25 112 30 105 35Z"/>
-        <!-- Eye -->
-        <circle cx="88" cy="40" r="3" fill="#c8922a"/>
-        <circle cx="112" cy="40" r="3" fill="#c8922a"/>
-        <!-- Tail feathers -->
-        <path d="M85 165 C75 180 65 195 70 198 C80 185 90 175 100 170 C110 175 120 185 130 198 C135 195 125 180 115 165Z"/>
-      </svg>
-    </div>
-
-    <div class="hero-content">
-      <p class="hero-eyebrow">Two Ravens Coffee Co. — Roasted for the Mission</p>
-      <h1 class="hero-headline">The Ravens Fly<br>Before Dawn.</h1>
-      <p class="hero-subheadline">Coffee roasted for the mission: animal rescue flights, military homecomings, and the questions that keep you up past midnight.</p>
-      <div class="hero-cta-group">
-        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop the Roasts</button>
-        <button class="btn-ghost"   onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
+  <section class="hero">
+    <span class="star" aria-hidden="true">✦</span>
+    <div class="wrap">
+      <p class="eyebrow">Roasted to order · Shipped fresh</p>
+      <h1>Good coffee, flown in a good direction.</h1>
+      <p class="lead">Small-batch roasts for early mornings and long hauls. A portion of every bag supports <strong>Angel Wings Transport</strong>, a 501(c)(3) that flies rescued animals, service members, and medical patients where they need to be.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#roasts">Shop the roasts</a>
+        <a class="btn btn-ghost" href="#mission">Meet the mission</a>
       </div>
-      <p class="hero-tagline">THOUGHT . MEMORY</p>
-    </div>
-
-    <div class="scroll-indicator" aria-hidden="true">
-      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M8 0v16M2 10l6 6 6-6"/>
-      </svg>
     </div>
   </section>
 
-  <!-- ============================================================
-       PRODUCTS
-  ============================================================ -->
-  <section id="products" aria-label="Products">
-    <div class="container">
-      <div class="products-header">
-        <p class="section-label">The Roasts</p>
-        <h2>Three Roasts. Three Missions.</h2>
-        <p>Roasted to order. Shipped within days. Every bag supports the mission.</p>
+  <section id="roasts">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">The Roasts</p>
+        <h2>Three roasts for three kinds of mornings.</h2>
+        <p class="lead" style="margin-inline:auto;">Roasted to order and shipped within days. Pick the bag that fits your morning. Each one is tied to something we care about.</p>
       </div>
 
-      <div class="products-grid">
-
-        <!-- TAILWIND -->
-        <article class="product-card card-tailwind">
-          <div class="product-img-wrap">
-            <span class="product-roast-badge">Light Roast</span>
-            <!-- Raven silhouette placeholder -->
-            <!-- TODO: Replace src="" with actual product image URL from Roastify once store is published -->
-            <svg viewBox="0 0 200 200" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg" aria-label="Tailwind — Light Roast">
-              <path d="M100 170 C80 155 50 140 30 115 C10 90 15 60 30 45 C45 30 65 28 80 35 C70 20 85 5 100 10 C115 5 130 20 120 35 C135 28 155 30 170 45 C185 60 190 90 170 115 C150 140 120 155 100 170Z"/>
-              <path d="M55 90 C40 75 25 65 20 50 C30 55 42 68 55 80Z"/>
-              <path d="M145 90 C160 75 175 65 180 50 C170 55 158 68 145 80Z"/>
-              <path d="M95 35 C88 30 82 25 90 22 C96 20 104 20 110 22 C118 25 112 30 105 35Z"/>
-              <circle cx="88" cy="40" r="3" fill="#c8922a" opacity="3"/>
-              <path d="M85 165 C75 180 65 195 70 198 C80 185 90 175 100 170 C110 175 120 185 130 198 C135 195 125 180 115 165Z"/>
-              <!-- Wind lines for Tailwind -->
-              <path d="M20 80 Q35 75 50 80 Q65 85 80 80" stroke="#c8922a" stroke-width="1" fill="none" opacity="0.4"/>
-              <path d="M20 90 Q35 85 50 90 Q65 95 80 90" stroke="#c8922a" stroke-width="1" fill="none" opacity="0.25"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Tailwind</h3>
-            <p class="product-desc">The everyday carry. Bright and clean. Helps sustain the network putting rescued animals on planes.</p>
-            <div class="product-footer">
-              <div class="product-price">
-                $14.99
-                <small>12 oz bag</small>
-              </div>
-              <!-- TODO: Replace with Stripe integration:
-                   stripe.redirectToCheckout({
-                     lineItems: [{ price: 'PRICE_ID_TAILWIND', quantity: 1 }],
-                     mode: 'payment',
-                     successUrl: window.location.href + '?success=true',
-                     cancelUrl: window.location.href + '?cancelled=true'
-                   })
-              -->
-              <button class="btn-buy" onclick="openComingSoon('Tailwind')">Buy Now</button>
-            </div>
+      <div class="products">
+        <article class="pcard">
+          <a class="ph" href="products/tailwind.html">
+            <img src="https://cdn.roastify.app/mockup-images/8ddc4028-a771-4393-bf64-322d6b8b772f.png" alt="Tailwind Medium Roast bag" loading="lazy" />
+          </a>
+          <div class="body">
+            <span class="pill">Medium Roast</span>
+            <h3>Tailwind</h3>
+            <p>The everyday cup. Smooth and easy-drinking, with chocolate-covered almond and maple. The one you reach for without thinking twice.</p>
+            <div class="price-row"><span class="price">$19.99</span><span class="price unit">/ 12 oz</span></div>
+            <a class="btn btn-gold btn-block" href="products/tailwind.html">View roast</a>
           </div>
         </article>
 
-        <!-- FINAL APPROACH -->
-        <article class="product-card card-final">
-          <div class="product-img-wrap">
-            <span class="product-roast-badge">Medium Roast</span>
-            <!-- TODO: Replace with actual product image URL from Roastify once store is published -->
-            <svg viewBox="0 0 200 200" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg" aria-label="Final Approach — Medium Roast">
-              <path d="M100 170 C80 155 50 140 30 115 C10 90 15 60 30 45 C45 30 65 28 80 35 C70 20 85 5 100 10 C115 5 130 20 120 35 C135 28 155 30 170 45 C185 60 190 90 170 115 C150 140 120 155 100 170Z"/>
-              <path d="M55 90 C40 75 25 65 20 50 C30 55 42 68 55 80Z"/>
-              <path d="M145 90 C160 75 175 65 180 50 C170 55 158 68 145 80Z"/>
-              <path d="M95 35 C88 30 82 25 90 22 C96 20 104 20 110 22 C118 25 112 30 105 35Z"/>
-              <circle cx="88" cy="40" r="3" fill="#c8922a" opacity="3"/>
-              <path d="M85 165 C75 180 65 195 70 198 C80 185 90 175 100 170 C110 175 120 185 130 198 C135 195 125 180 115 165Z"/>
-              <!-- Landing approach angle lines -->
-              <path d="M160 40 L100 140" stroke="#c8922a" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="4 3"/>
-            </svg>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Final Approach</h3>
-            <p class="product-desc">The transition cup. For homecomings and the moment of landing. Smooth, steady, earned.</p>
-            <div class="product-footer">
-              <div class="product-price">
-                $14.99
-                <small>12 oz bag</small>
-              </div>
-              <!-- TODO: Replace with Stripe integration:
-                   stripe.redirectToCheckout({
-                     lineItems: [{ price: 'PRICE_ID_FINAL_APPROACH', quantity: 1 }],
-                     mode: 'payment',
-                     successUrl: window.location.href + '?success=true',
-                     cancelUrl: window.location.href + '?cancelled=true'
-                   })
-              -->
-              <button class="btn-buy" onclick="openComingSoon('Final Approach')">Buy Now</button>
-            </div>
+        <article class="pcard">
+          <a class="ph" href="products/final-approach.html">
+            <img src="https://cdn.roastify.app/mockup-images/bf36d450-e2ad-4ee8-95fb-bd433ba64d39.png" alt="Final Approach Dark Roast bag" loading="lazy" />
+          </a>
+          <div class="body">
+            <span class="pill">Dark Roast</span>
+            <h3>Final Approach</h3>
+            <p>The last stretch before the wheels touch down. Bold cocoa and toasted nut for the last mile home.</p>
+            <div class="price-row"><span class="price">$21.99</span><span class="price unit">/ 12 oz</span></div>
+            <a class="btn btn-gold btn-block" href="products/final-approach.html">View roast</a>
           </div>
         </article>
 
-        <!-- 3 AM BLEND -->
-        <article class="product-card card-3am">
-          <div class="product-img-wrap">
-            <span class="product-roast-badge">Dark Roast</span>
-            <!-- TODO: Replace with actual product image URL from Roastify once store is published -->
-            <svg viewBox="0 0 200 200" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg" aria-label="3 AM Blend — Dark Roast">
-              <path d="M100 170 C80 155 50 140 30 115 C10 90 15 60 30 45 C45 30 65 28 80 35 C70 20 85 5 100 10 C115 5 130 20 120 35 C135 28 155 30 170 45 C185 60 190 90 170 115 C150 140 120 155 100 170Z"/>
-              <path d="M55 90 C40 75 25 65 20 50 C30 55 42 68 55 80Z"/>
-              <path d="M145 90 C160 75 175 65 180 50 C170 55 158 68 145 80Z"/>
-              <path d="M95 35 C88 30 82 25 90 22 C96 20 104 20 110 22 C118 25 112 30 105 35Z"/>
-              <circle cx="88" cy="40" r="3" fill="#c8922a" opacity="3"/>
-              <path d="M85 165 C75 180 65 195 70 198 C80 185 90 175 100 170 C110 175 120 185 130 198 C135 195 125 180 115 165Z"/>
-              <!-- Stars for 3AM -->
-              <circle cx="30" cy="30" r="1.5" fill="#c8922a" opacity="0.5"/>
-              <circle cx="50" cy="15" r="1"   fill="#c8922a" opacity="0.4"/>
-              <circle cx="160" cy="25" r="1.5" fill="#c8922a" opacity="0.5"/>
-              <circle cx="170" cy="45" r="1"   fill="#c8922a" opacity="0.3"/>
-              <circle cx="140" cy="15" r="1.5" fill="#c8922a" opacity="0.4"/>
-            </svg>
+        <article class="pcard">
+          <a class="ph" href="products/3am-blend.html" aria-label="3 AM Blend" style="flex-direction:column;gap:.2rem;color:var(--muted);font-family:var(--serif);">
+            <span style="font-size:1.6rem;color:var(--gold);">✦</span>
+            <span style="font-size:1.3rem;">3 AM Blend</span>
+            <span style="font-family:var(--sans);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;">Artwork coming soon</span>
+          </a>
+          <div class="body">
+            <span class="pill">Dark Roast</span>
+            <h3>3 AM Blend</h3>
+            <p>For the people up when they shouldn't have to be. Bakers chocolate, caramelized sugar, and toffee. Deep, with a little edge to it.</p>
+            <div class="price-row"><span class="price">$21.99</span><span class="price unit">/ 12 oz</span></div>
+            <a class="btn btn-gold btn-block" href="products/3am-blend.html">View roast</a>
           </div>
-          <div class="product-body">
-            <h3 class="product-name">3 AM Blend</h3>
-            <p class="product-desc">For the people who are up when they shouldn't have to be. Deep and a little haunted.</p>
-            <div class="product-footer">
-              <div class="product-price">
-                $14.99
-                <small>12 oz bag</small>
-              </div>
-              <!-- TODO: Replace with Stripe integration:
-                   stripe.redirectToCheckout({
-                     lineItems: [{ price: 'PRICE_ID_3AM_BLEND', quantity: 1 }],
-                     mode: 'payment',
-                     successUrl: window.location.href + '?success=true',
-                     cancelUrl: window.location.href + '?cancelled=true'
-                   })
-              -->
-              <button class="btn-buy" onclick="openComingSoon('3 AM Blend')">Buy Now</button>
-            </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 250TH COLLECTION -->
+  <section id="collection" class="alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">Limited Edition · Preorder</p>
+        <h2>The 250th Collection</h2>
+        <p class="lead" style="margin-inline:auto;">Three commemorative roasts for America's 250th, from a quiet, giftable medium to a full-throttle dark. Roasted to order and shipped by July 1, in time for the Fourth. A portion of every bag supports Angel Wings Transport's work flying our service members and veterans home.</p>
+      </div>
+      <div class="products">
+        <article class="pcard">
+          <a class="ph" href="products/dawns-light.html" aria-label="By Dawn's Light" style="flex-direction:column;gap:.25rem;color:var(--muted);font-family:var(--serif);background:radial-gradient(400px 220px at 50% 25%, #1f3a5f55, transparent 70%);">
+            <span style="font-size:1.5rem;color:var(--gold);">✦</span>
+            <span style="font-size:1.25rem;">By Dawn's Light</span>
+            <span style="font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;">Limited · Preorder</span>
+          </a>
+          <div class="body">
+            <span class="pill">Medium Roast</span>
+            <h3>By Dawn's Light</h3>
+            <p>Refined and reflective. Milk chocolate, toasted pecan, and a clean caramel finish. A giftable medium to mark 250 years.</p>
+            <div class="price-row"><span class="price">$22.99</span><span class="price unit">/ 12 oz · limited</span></div>
+            <a class="btn btn-gold btn-block" href="products/dawns-light.html">Preorder</a>
           </div>
         </article>
 
+        <article class="pcard">
+          <a class="ph" href="products/home-of-the-brave.html" aria-label="Home of the Brave" style="flex-direction:column;gap:.25rem;color:var(--muted);font-family:var(--serif);background:radial-gradient(400px 220px at 50% 25%, #9c2b2b55, transparent 70%);">
+            <span style="font-size:1.5rem;color:var(--gold);">✦</span>
+            <span style="font-size:1.25rem;">Home of the Brave</span>
+            <span style="font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;">Limited · Preorder</span>
+          </a>
+          <div class="body">
+            <span class="pill">Medium-Dark</span>
+            <h3>Home of the Brave</h3>
+            <p>Bold and festive. Dark chocolate, toasted almond, and molasses. The cookout cup for the Fourth and beyond.</p>
+            <div class="price-row"><span class="price">$22.99</span><span class="price unit">/ 12 oz · limited</span></div>
+            <a class="btn btn-gold btn-block" href="products/home-of-the-brave.html">Preorder</a>
+          </div>
+        </article>
+
+        <article class="pcard">
+          <a class="ph" href="products/afterburner.html" aria-label="Afterburner" style="flex-direction:column;gap:.25rem;color:var(--muted);font-family:var(--serif);background:radial-gradient(400px 220px at 50% 25%, #b23a3a55, transparent 70%);">
+            <span style="font-size:1.5rem;color:var(--gold);">✦</span>
+            <span style="font-size:1.25rem;">Afterburner</span>
+            <span style="font-family:var(--sans);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;">Limited · Preorder</span>
+          </a>
+          <div class="body">
+            <span class="pill">Bold Dark</span>
+            <h3>Afterburner</h3>
+            <p>Full throttle. Dark cocoa, black walnut, and a campfire edge. High-octane and unapologetic.</p>
+            <div class="price-row"><span class="price">$22.99</span><span class="price unit">/ 12 oz · limited</span></div>
+            <a class="btn btn-gold btn-block" href="products/afterburner.html">Preorder</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       OUR STORY
-  ============================================================ -->
-  <section id="story" aria-label="Our Story">
-    <div class="container">
-      <div class="story-layout">
-
-        <aside class="story-sidebar">
-          <p class="section-label">Origin</p>
-          <h2>Our<br>Story</h2>
-          <div class="divider"></div>
-          <div class="story-raven" aria-hidden="true">
-            <svg width="120" height="120" viewBox="0 0 200 200" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg">
-              <path d="M100 170 C80 155 50 140 30 115 C10 90 15 60 30 45 C45 30 65 28 80 35 C70 20 85 5 100 10 C115 5 130 20 120 35 C135 28 155 30 170 45 C185 60 190 90 170 115 C150 140 120 155 100 170Z"/>
-              <path d="M55 90 C40 75 25 65 20 50 C30 55 42 68 55 80Z"/>
-              <path d="M145 90 C160 75 175 65 180 50 C170 55 158 68 145 80Z"/>
-              <path d="M95 35 C88 30 82 25 90 22 C96 20 104 20 110 22 C118 25 112 30 105 35Z"/>
-              <circle cx="88" cy="40" r="3" fill="#c8922a"/>
-              <path d="M85 165 C75 180 65 195 70 198 C80 185 90 175 100 170 C110 175 120 185 130 198 C135 195 125 180 115 165Z"/>
-            </svg>
-          </div>
-        </aside>
-
-        <div class="story-body">
-          <p>
-            Odin sends Huginn and Muninn out each morning. <strong>Thought and Memory.</strong> A frame for paying attention to the world. Huginn is Thought: the raven you send out into the uncertain. Muninn is Memory: the one who brings back what matters. Every morning, Odin waits to see if they return. There is something older than most stories about that kind of attention.
-          </p>
-          <p>
-            AWT Rescue is the real-world version of that myth. Volunteer pilots across the country flying animals in need: dogs, cats, wildlife, creatures that can't speak for what they need. The mission covers operational costs. Transport crates. Vet health checks. Coordination. Not compensation for flights. The work.
-          </p>
-          <p>
-            Three roasts, three missions. <strong>Tailwind</strong> for the rescue network. <strong>Final Approach</strong> for the homecoming flights. <strong>3 AM Blend</strong> for the ones who can't sleep because something matters to them.
-          </p>
-          <p>
-            Roasted to order and shipped within days. The Norse angle isn't a costume. It's a frame. Thought and Memory: what you give your attention to, what you carry forward. Every order helps keep the mission moving.
-          </p>
-        </div>
-
+  <section id="story" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Our Story</p>
+        <h2>Two ravens, and the habit of paying attention.</h2>
       </div>
+      <p class="lead" style="max-width:68ch;">The name comes from an old Norse idea: two ravens, <em>Thought</em> and <em>Memory</em>, sent out each morning to see what was happening in the world and bring back what mattered. We liked it as a reminder to pay attention to the things that count, and to carry the good ones forward.</p>
+      <p style="max-width:68ch;">For us, that means coffee made carefully and tied to work we believe in. Every bag is roasted to order and shipped fresh, and most of our roasts give back to Angel Wings Transport, which flies animals and people home when they need it.</p>
     </div>
   </section>
 
-  <!-- ============================================================
-       MISSION
-  ============================================================ -->
-  <section id="mission" aria-label="Mission">
-    <div class="container">
-      <div class="mission-inner">
-        <p class="section-label">Angel Wings Transport</p>
-        <h2>The Mission Behind the Coffee</h2>
-        <p>
-          AWT Rescue coordinates volunteer aviation for animals and people who need it. Volunteer pilots donate their time and aircraft. The network spans the country. A dog that needs to travel 1,400 miles to reach a rescue gets there because someone with a Cessna said yes.
-        </p>
-        <p>
-          The same network supports military family homecomings. The moment when someone lands after a long deployment is not a small thing. We help make those flights possible.
-        </p>
-        <p>
-          Every Two Ravens purchase helps cover operational costs: transport crates, vet health checks, mission coordination, and the infrastructure that keeps the network moving. The flights are flown by volunteers. What you're supporting is everything around the flight that makes it work.
-        </p>
-
-        <div class="mission-faa-note">
-          AWT Rescue operates under FAA regulations. All flights are conducted by volunteer pilots under Part 91. Revenue from Two Ravens Coffee Co. supports mission operational costs only and does not constitute compensation for air transportation.
-        </div>
-
-        <a href="https://awtrescue.org" target="_blank" rel="noopener noreferrer" class="mission-link">
-          Learn about AWT Rescue &rarr;
-        </a>
+  <section id="mission">
+    <div class="wrap">
+      <div class="section-head center">
+        <p class="eyebrow">The Mission Behind the Coffee</p>
+        <h2>What your cup helps make possible.</h2>
+        <p class="lead" style="margin-inline:auto;">Angel Wings Transport is a 501(c)(3) network of volunteer pilots across the Northwest: Washington, Oregon, California, Idaho, and Montana. The pilots donate their time and aircraft. What we help support is everything around the flight.</p>
       </div>
+
+      <div class="cards-3">
+        <div class="mcard">
+          <div class="ic" aria-hidden="true">🐾</div>
+          <h3>Animal Transport</h3>
+          <p>Coordinating animals out of overcrowded shelters and into rescues and forever homes, covering crates, health checks, and the logistics that get them there.</p>
+        </div>
+        <div class="mcard">
+          <div class="ic" aria-hidden="true">✈️</div>
+          <h3>Military &amp; Homecomings</h3>
+          <p>Support for service members and their families, including the long-awaited flight home after a deployment.</p>
+        </div>
+        <div class="mcard">
+          <div class="ic" aria-hidden="true">➕</div>
+          <h3>Medical Transport</h3>
+          <p>Helping ambulatory patients with a financial need reach the care they're traveling for, through the same regional volunteer network.</p>
+        </div>
+      </div>
+
+      <p class="fineprint">
+        Angel Wings Transport operates under FAA regulations; all flights are conducted by volunteer pilots under Part 91. A portion of Two Ravens Coffee Co. sales supports the organization's mission and operational costs as a 501(c)(3) nonprofit. Coffee purchases are not compensation for air transportation.
+        <a href="https://awtrescue.org" target="_blank" rel="noopener">Learn about Angel Wings Transport →</a>
+      </p>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="footer-logo">Two Ravens Coffee Co.</div>
-          <div class="footer-tagline">THOUGHT . MEMORY</div>
-          <p>Dark, mission-driven coffee roasted on the Roastify platform. Supporting AWT Rescue animal rescue flights and military family homecomings.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <p><span class="mark">✦ Two Ravens Coffee Co.</span></p>
+          <p class="foot-note">Small-batch coffee roasted to order, supporting Angel Wings Transport, a 501(c)(3) flying rescued animals, service members, and medical patients across the Northwest.</p>
         </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <div class="footer-nav-col">
-            <h4>Shop</h4>
-            <ul>
-              <li><a href="#products">Tailwind</a></li>
-              <li><a href="#products">Final Approach</a></li>
-              <li><a href="#products">3 AM Blend</a></li>
-            </ul>
-          </div>
-          <div class="footer-nav-col">
-            <h4>About</h4>
-            <ul>
-              <li><a href="#story">Our Story</a></li>
-              <li><a href="#mission">The Mission</a></li>
-              <li><a href="https://awtrescue.org" target="_blank" rel="noopener noreferrer">AWT Rescue</a></li>
-            </ul>
-          </div>
-        </nav>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products/tailwind.html">Tailwind</a></li>
+            <li><a href="products/final-approach.html">Final Approach</a></li>
+            <li><a href="products/3am-blend.html">3 AM Blend</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul>
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="index.html#mission">The Mission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://awtrescue.org" target="_blank" rel="noopener">Angel Wings Transport</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 Two Ravens Coffee Co. All rights reserved.</p>
-        <p class="footer-mission-line">Supporting the mission. One cup at a time.</p>
+      <div class="foot-legal">
+        <span>© 2026 Two Ravens Coffee Co. All rights reserved.</span>
+        <span>A portion of every bag supports the mission.</span>
       </div>
     </div>
   </footer>
-
-  <!-- ============================================================
-       COMING SOON MODAL
-  ============================================================ -->
-  <div id="modal-coming-soon" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-box">
-      <svg width="48" height="48" viewBox="0 0 200 200" fill="var(--gold)" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M100 170 C80 155 50 140 30 115 C10 90 15 60 30 45 C45 30 65 28 80 35 C70 20 85 5 100 10 C115 5 130 20 120 35 C135 28 155 30 170 45 C185 60 190 90 170 115 C150 140 120 155 100 170Z"/>
-        <path d="M85 165 C75 180 65 195 70 198 C80 185 90 175 100 170 C110 175 120 185 130 198 C135 195 125 180 115 165Z"/>
-      </svg>
-      <h3 id="modal-title">Orders Open Soon</h3>
-      <p id="modal-product-name" style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.2em;color:var(--gold);margin-bottom:1rem;"></p>
-      <p>We're putting the finishing touches on checkout. Drop us a line at <a href="mailto:hello@tworavenscoffee.com" style="color:var(--gold);">hello@tworavenscoffee.com</a> to get notified when orders go live.</p>
-      <button class="modal-close" onclick="closeComingSoon()">Close</button>
-    </div>
-  </div>
-
-  <!-- ============================================================
-       SCRIPTS
-  ============================================================ -->
-  <script>
-    // Coming soon modal
-    function openComingSoon(product) {
-      document.getElementById('modal-product-name').textContent = product;
-      document.getElementById('modal-coming-soon').classList.add('open');
-    }
-
-    function closeComingSoon() {
-      document.getElementById('modal-coming-soon').classList.remove('open');
-    }
-
-    // Close modal on overlay click
-    document.getElementById('modal-coming-soon').addEventListener('click', function(e) {
-      if (e.target === this) closeComingSoon();
-    });
-
-    // Close modal on Escape
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeComingSoon();
-    });
-
-    // Mobile nav
-    function toggleMobileNav(btn) {
-      const nav = document.getElementById('mobile-nav');
-      const isOpen = nav.style.display === 'flex';
-      nav.style.display = isOpen ? 'none' : 'flex';
-      btn.setAttribute('aria-expanded', !isOpen);
-    }
-
-    function closeMobileNav() {
-      document.getElementById('mobile-nav').style.display = 'none';
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Fade-in on scroll
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.product-card, .story-body p, .mission-inner p').forEach(function(el) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  </script>
 
 </body>
 </html>

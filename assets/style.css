@@ -1,0 +1,203 @@
+/* ============================================================
+   Two Ravens Coffee Co. shared styles
+   Brand: deep teal night sky, gold north star, warm cream.
+   ============================================================ */
+
+:root {
+  --ink:        #0c2226;  /* near-black teal, page background      */
+  --ink-2:      #103035;  /* raised surface / cards                */
+  --ink-3:      #16434a;  /* hover / borders                       */
+  --teal:       #1f5d66;  /* accent teal                          */
+  --gold:       #e0b15e;  /* north star gold                       */
+  --gold-soft:  #f0d29a;
+  --cream:      #f5efe2;  /* primary text                          */
+  --muted:      #b6c6c5;  /* secondary text                        */
+  --line:       rgba(245,239,226,.14);
+  --maxw:       1120px;
+  --radius:     14px;
+  --shadow:     0 18px 40px rgba(0,0,0,.35);
+  --serif:      'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:       'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--gold-soft); text-decoration: none; }
+a:hover { color: var(--gold); }
+
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+.eyebrow {
+  font-size: .8rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0 0 .6rem;
+}
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.1; color: var(--cream); }
+h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); letter-spacing: .5px; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 0 0 .5rem; }
+h3 { font-size: 1.5rem; margin: 0 0 .35rem; }
+
+p { margin: 0 0 1.1rem; }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 60ch; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--sans); font-weight: 600; font-size: 1rem;
+  padding: .85rem 1.5rem; border-radius: 999px;
+  border: 1.5px solid transparent; cursor: pointer;
+  transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: #2a1d05; }
+.btn-gold:hover { background: var(--gold-soft); color: #2a1d05; }
+.btn-ghost { background: transparent; color: var(--cream); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn-block { width: 100%; justify-content: center; }
+
+/* ---------- header / nav ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(12,34,38,.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.brand { display: flex; align-items: baseline; gap: .6rem; font-family: var(--serif); }
+.brand .mark { font-size: 1.5rem; color: var(--gold); line-height: 1; }
+.brand .name { font-size: 1.25rem; letter-spacing: .5px; color: var(--cream); }
+.brand .tag { font-size: .62rem; letter-spacing: .35em; color: var(--muted); text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 1.6rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--cream); font-size: .95rem; font-weight: 500; }
+.nav-links a:hover { color: var(--gold); }
+.nav-toggle { display: none; background: none; border: 0; color: var(--cream); font-size: 1.6rem; cursor: pointer; }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  background:
+    radial-gradient(1200px 500px at 70% -10%, rgba(31,93,102,.55), transparent 60%),
+    linear-gradient(180deg, #0c2226 0%, #0a1c20 100%);
+  overflow: hidden;
+}
+.hero .star { position: absolute; top: 12%; right: 14%; font-size: 2rem; color: var(--gold); opacity: .9; filter: drop-shadow(0 0 12px rgba(224,177,94,.6)); }
+.hero h1 { max-width: 16ch; }
+.hero .lead { margin-top: 1rem; }
+.hero .cta-row { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+
+/* ---------- sections ---------- */
+section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.section-head { max-width: 62ch; margin-bottom: 2.4rem; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.alt { background: var(--ink-2); }
+
+/* ---------- mission cards (awt-inspired three-up) ---------- */
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.mcard {
+  background: var(--ink); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.8rem 1.5rem; transition: border-color .2s ease, transform .2s ease;
+}
+.mcard:hover { border-color: var(--gold); transform: translateY(-3px); }
+.mcard .ic { font-size: 1.7rem; margin-bottom: .6rem; }
+
+/* ---------- product cards ---------- */
+.products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.pcard {
+  background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.pcard:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: var(--shadow); }
+.pcard .ph { aspect-ratio: 4/5; background: #0a1a1d; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.pcard .ph img { width: 100%; height: 100%; object-fit: cover; }
+.pcard .body { padding: 1.3rem 1.4rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.pill { align-self: flex-start; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--line); border-radius: 999px; padding: .25rem .7rem; margin-bottom: .7rem; }
+.pcard p { color: var(--muted); font-size: .98rem; flex: 1; }
+.price-row { display: flex; align-items: baseline; gap: .5rem; margin: .4rem 0 1rem; }
+.price { font-family: var(--serif); font-size: 1.6rem; color: var(--cream); }
+.price .unit { font-family: var(--sans); font-size: .85rem; color: var(--muted); }
+
+/* ---------- product detail ---------- */
+.pdetail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.gallery .main { background: #0a1a1d; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5; }
+.gallery .main img { width: 100%; height: 100%; object-fit: cover; }
+.thumbs { display: flex; gap: .7rem; margin-top: .8rem; }
+.thumbs button { padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #0a1a1d; cursor: pointer; width: 78px; height: 96px; }
+.thumbs button.active { border-color: var(--gold); }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; }
+.breadcrumb { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--muted); }
+.notes { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 1.5rem; list-style: none; padding: 0; }
+.notes li { background: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: .35rem .85rem; font-size: .85rem; color: var(--cream); }
+.spec { width: 100%; border-collapse: collapse; margin: 1rem 0 1.6rem; }
+.spec th, .spec td { text-align: left; padding: .6rem 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.spec th { color: var(--muted); font-weight: 500; width: 42%; }
+.opt-row { display: flex; gap: .6rem; margin: 0 0 1.2rem; flex-wrap: wrap; }
+.opt { border: 1.5px solid var(--line); background: transparent; color: var(--cream); border-radius: 10px; padding: .6rem 1.1rem; cursor: pointer; font-weight: 600; font-size: .95rem; }
+.opt.active { border-color: var(--gold); color: var(--gold); }
+.note-box { background: var(--ink-2); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 10px; padding: 1rem 1.2rem; font-size: .92rem; color: var(--muted); }
+
+/* ---------- contact form ---------- */
+.form-card { background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.6rem, 4vw, 2.5rem); max-width: 620px; margin: 0 auto; }
+.field { margin-bottom: 1.1rem; }
+.field label { display: block; font-size: .85rem; letter-spacing: .04em; color: var(--muted); margin-bottom: .4rem; }
+.field input, .field select, .field textarea {
+  width: 100%; background: var(--ink); border: 1.5px solid var(--line); border-radius: 10px;
+  color: var(--cream); font-family: var(--sans); font-size: 1rem; padding: .8rem .9rem;
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); }
+.field textarea { resize: vertical; min-height: 120px; }
+.form-status { margin-top: 1rem; font-size: .95rem; min-height: 1.2em; }
+.form-status.ok { color: var(--gold-soft); }
+.form-status.err { color: #f3a3a3; }
+
+/* ---------- footer ---------- */
+.site-footer { background: #081619; border-top: 1px solid var(--line); padding: 3rem 0 2rem; }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+.site-footer h4 { font-family: var(--sans); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 .9rem; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: .5rem; }
+.site-footer a { color: var(--cream); font-size: .95rem; }
+.foot-brand .mark { color: var(--gold); font-family: var(--serif); font-size: 1.4rem; }
+.foot-note { color: var(--muted); font-size: .9rem; max-width: 44ch; }
+.foot-legal { margin-top: 2.4rem; padding-top: 1.4rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem; color: var(--muted); font-size: .82rem; }
+
+/* ---------- compliance fine print ---------- */
+.fineprint { font-size: .82rem; color: var(--muted); max-width: 70ch; margin-top: 1.5rem; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .pdetail { grid-template-columns: 1fr; gap: 1.8rem; }
+  .cards-3, .products { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute; top: 70px; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: var(--ink-2); border-bottom: 1px solid var(--line);
+    padding: .5rem 22px 1rem; display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; width: 100%; padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  .btn-block-mobile { width: 100%; justify-content: center; }
+}
