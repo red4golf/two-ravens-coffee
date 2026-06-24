@@ -88,7 +88,7 @@
 
           <!-- Buy (Stripe placeholder) -->
           <button class="btn btn-gold btn-block" id="buy" data-product="tailwind" disabled style="opacity:.65;cursor:not-allowed;">Checkout opens soon</button>
-          <p class="note-box" style="margin-top:1rem;">Secure checkout is being connected. Want a heads-up the moment Tailwind goes live? <a href="../contact.html">Leave your email →</a></p>
+          <p id="notify" class="note-box" style="margin-top:1rem;">Secure checkout is being connected. Want a heads-up the moment Tailwind goes live? <a href="../contact.html">Leave your email →</a></p>
 
           <!-- Specs -->
           <table class="spec">
@@ -190,6 +190,8 @@
       buyBtn.style.opacity = STRIPE_LINK ? "" : ".65";
       buyBtn.style.cursor = STRIPE_LINK ? "" : "not-allowed";
       buyBtn.textContent = STRIPE_LINK ? BUY_LABEL : BUY_PENDING;
+      var notifyEl = document.getElementById('notify');
+      if (notifyEl) notifyEl.style.display = STRIPE_LINK ? "none" : "";
     }
     buyBtn.addEventListener('click', function () {
       var url = checkoutUrl();

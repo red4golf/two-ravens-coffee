@@ -74,7 +74,7 @@
           </div>
 
           <button class="btn btn-gold btn-block" id="buy" data-product="home-of-the-brave" disabled style="opacity:.65;cursor:not-allowed;">Coming soon</button>
-          <p class="note-box" style="margin-top:1rem;">Want first dibs when it drops? <a href="../contact.html">Reserve your spot →</a></p>
+          <p id="notify" class="note-box" style="margin-top:1rem;">Want first dibs when it drops? <a href="../contact.html">Reserve your spot →</a></p>
 
           <table class="spec">
             <tr><th>Roast level</th><td>Medium-Dark Roast</td></tr>
@@ -162,6 +162,8 @@
       buyBtn.style.opacity = STRIPE_LINK ? "" : ".65";
       buyBtn.style.cursor = STRIPE_LINK ? "" : "not-allowed";
       buyBtn.textContent = STRIPE_LINK ? BUY_LABEL : BUY_PENDING;
+      var notifyEl = document.getElementById('notify');
+      if (notifyEl) notifyEl.style.display = STRIPE_LINK ? "none" : "";
     }
     buyBtn.addEventListener('click', function () {
       var url = checkoutUrl();
