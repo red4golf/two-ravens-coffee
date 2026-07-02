@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <div class="ship-banner" style="background:var(--gold,#e0b15e);color:#1a1a1a;text-align:center;font-family:var(--sans,'Inter',sans-serif);font-weight:600;font-size:.82rem;letter-spacing:.02em;padding:.55rem 1rem;">✦ Free shipping on every order through August 1 — no code needed</div>
+  <div class="ship-banner" style="background:var(--gold,#e0b15e);color:#1a1a1a;text-align:center;font-family:var(--sans,'Inter',sans-serif);font-weight:600;font-size:.82rem;letter-spacing:.02em;padding:.55rem 1rem;">✦ Free shipping on every 2-bag order through August 1 — no code needed</div>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -90,6 +90,7 @@
 
           <!-- Buy (Stripe placeholder) -->
           <button class="btn btn-gold btn-block" id="buy" data-product="tailwind" disabled style="opacity:.65;cursor:not-allowed;">Checkout opens soon</button>
+          <button class="btn btn-block" id="buy2" data-product="tailwind-2pack" disabled style="opacity:.65;cursor:not-allowed;margin-top:.6rem;border:1px solid var(--gold);">2-pack — free shipping (coming soon)</button>
           <p id="notify" class="note-box" style="margin-top:1rem;">Secure checkout is being connected. Want a heads-up the moment Tailwind goes live? <a href="../contact.html">Leave your email →</a></p>
 
           <!-- Specs -->
@@ -138,7 +139,7 @@
       </div>
       <div class="foot-legal">
         <span>© 2026 Two Ravens Coffee Co. All rights reserved.</span>
-        <span>A portion of every bag supports the mission.</span>
+        <span>Our mission roasts support Angel Wings Transport, a 501(c)(3).</span>
       </div>
     </div>
   </footer>
@@ -174,6 +175,7 @@
        it shows on the order. Leave blank to keep the button disabled.
        ============================================================ */
     var STRIPE_LINK = "https://buy.stripe.com/5kQbJ058ccQbchme9ogUM00";   // <- Tailwind Payment Link
+    var STRIPE_LINK_2PACK = "https://buy.stripe.com/fZu7sKbwAdUf3KQghwgUM02";   // <- 2-pack Payment Link ($0 shipping). Leave blank to hide as coming soon.
     var BUY_LABEL = "Buy now";
     var BUY_PENDING = "Checkout opens soon";
 
@@ -194,10 +196,22 @@
       buyBtn.textContent = STRIPE_LINK ? BUY_LABEL : BUY_PENDING;
       var notifyEl = document.getElementById('notify');
       if (notifyEl) notifyEl.style.display = STRIPE_LINK ? "none" : "";
+      var buy2Btn = document.getElementById('buy2');
+      if (buy2Btn) {
+        buy2Btn.disabled = !STRIPE_LINK_2PACK;
+        buy2Btn.style.opacity = STRIPE_LINK_2PACK ? "" : ".65";
+        buy2Btn.style.cursor = STRIPE_LINK_2PACK ? "" : "not-allowed";
+        buy2Btn.textContent = STRIPE_LINK_2PACK ? "Buy a 2-pack — free shipping" : "2-pack — free shipping (coming soon)";
+      }
     }
     buyBtn.addEventListener('click', function () {
       var url = checkoutUrl();
       if (url) window.location.href = url;
+    });
+    document.getElementById('buy2').addEventListener('click', function () {
+      if (!STRIPE_LINK_2PACK) return;
+      var sep = STRIPE_LINK_2PACK.indexOf('?') > -1 ? '&' : '?';
+      window.location.href = STRIPE_LINK_2PACK + sep + 'client_reference_id=' + currentGrind();
     });
     refreshBuy();
   </script>
